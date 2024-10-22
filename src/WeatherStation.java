@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 // Интерфейс Observer (Наблюдатель)
 interface Observer {
     void update(float temperature);
@@ -45,25 +48,5 @@ class LaptopDisplay implements Observer {
     @Override
     public void update(float temperature) {
         System.out.println("Ноутбук: Температура изменилась, теперь " + temperature + " градусов");
-    }
-}
-
-// Пример использования
-public class ObserverPatternExample {
-    public static void main(String[] args) {
-        // Создаем издателя (метеостанцию)
-        WeatherStation weatherStation = new WeatherStation();
-
-        // Создаем два наблюдателя (телефон и ноутбук)
-        Observer phoneDisplay = new PhoneDisplay();
-        Observer laptopDisplay = new LaptopDisplay();
-
-        // Добавляем наблюдателей к метеостанции
-        weatherStation.addObserver(phoneDisplay);
-        weatherStation.addObserver(laptopDisplay);
-
-        // Изменяем температуру и наблюдатели автоматически получают обновление
-        weatherStation.setTemperature(25.0f);
-        weatherStation.setTemperature(30.5f);
     }
 }
