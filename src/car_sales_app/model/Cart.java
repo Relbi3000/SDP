@@ -25,4 +25,14 @@ public class Cart {
     public List<Car> getCars() {
         return cars;
     }
+
+    // Method to find a car by type in the cart
+    public Car findCarByType(String carType) {
+        for (Car car : cars) {
+            if (car.getDetails().contains(carType)) {
+                return car;
+            }
+        }
+        return null;
+    }
 }

@@ -4,7 +4,6 @@ import java.util.logging.Logger;
 
 public class OrderBuilder {
     private static final Logger logger = Logger.getLogger(OrderBuilder.class.getName());
-
     private Cart cart;
     private String address;
     private String paymentMethod;
